@@ -11,8 +11,8 @@ import { COLUMNS } from "./columns";
 import "./Table.css";
 
 export const FilteringTable = (props) => {
-	const columns = COLUMNS; // Use MEMO ??????
-	const data = props.data; // Use MEMO ??????
+	const columns = COLUMNS; // Why use MEMO ??????
+	const data = props.data; // Why use MEMO ??????
 
 	const {
 		getTableProps,
