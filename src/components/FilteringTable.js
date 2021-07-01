@@ -5,14 +5,17 @@ import {
 	useFilters,
 	useSortBy,
 	usePagination,
+	UseRowSelectHooks,
+	useRowSelect,
 } from "react-table";
 import MOCK_DATA_SCREENER from "./MOCK_DATA_SCREENER.json";
 import { COLUMNS } from "./columns";
 import "./Table.css";
+import { CheckBox } from "./CheckBox";
 
 export const FilteringTable = (props) => {
-	const columns = COLUMNS; // Why use MEMO ??????
-	const data = props.data; // Why use MEMO ??????
+	const columns = COLUMNS; // use MEMO ??????
+	const data = props.data; // use MEMO ??????
 
 	const {
 		getTableProps,
@@ -26,6 +29,7 @@ export const FilteringTable = (props) => {
 		pageOptions,
 		state,
 		prepareRow,
+		selectedFlatRows,
 		allColumns,
 		getToggleHideAllColumnsProps,
 	} = useTable(
@@ -35,9 +39,26 @@ export const FilteringTable = (props) => {
 		},
 		useFilters,
 		useSortBy,
-		usePagination
+		usePagination,
+		useRowSelect,
+		(hooks) => {
+			hooks.visibleColumns.push((columns) => {
+				return [
+					{
+						id: "selection",
+						header: ({ getToggleAllRowsSelectedProps }) => (
+							<CheckBox {...getToggleAllRowsSelectedProps()} />
+						),
+						Cell: ({ row }) => (
+							<CheckBox {...row.getToggleRowSelectedProps()} />
+						),
+					},
+					...columns,
+				];
+			});
+		}
 	);
-
+	console.log(selectedFlatRows);
 	const { pageIndex } = state;
 	return (
 		<>
@@ -71,6 +92,17 @@ export const FilteringTable = (props) => {
 					})}
 				</tbody>
 			</table>
+			<pre>
+				<code>
+					{JSON.stringify(
+						{
+							selectedFlatRows: selectedFlatRows.map((row) => row.original),
+						},
+						null,
+						2
+					)}
+				</code>
+			</pre>
 			<div>
 				<span>
 					Page{" "}
