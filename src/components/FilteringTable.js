@@ -17,6 +17,7 @@ export const FilteringTable = (props) => {
 	const columns = COLUMNS; // use MEMO ??????
 	const data = props.data; // use MEMO ??????
 
+	// Deconstructing useTable instance
 	const {
 		getTableProps,
 		getTableBodyProps,
@@ -62,6 +63,19 @@ export const FilteringTable = (props) => {
 	const { pageIndex } = state;
 	return (
 		<>
+			<div>
+				<div>
+					<CheckBox {...getToggleHideAllColumnsProps()} /> Toggle All{" "}
+				</div>
+				{allColumns.map((column) => (
+					<div key={column.id}>
+						<label>
+							<input type='checkbox' {...column.getToggleHiddenProps()} />
+							{column.header}
+						</label>
+					</div>
+				))}
+			</div>
 			<table {...getTableProps}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
