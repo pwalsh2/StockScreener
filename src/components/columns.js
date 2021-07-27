@@ -1,10 +1,11 @@
 import { format } from "date-fns";
 
 export const COLUMNS = [
-	{ accessor: "id", header: "id" },
+	{ accessor: "id", header: "id", show:false },
 	{
 		accessor: "symbol",
 		header: "Symbol",
+		show:false
 	},
 	{
 		accessor: "Exchange",
@@ -57,22 +58,27 @@ export const COLUMNS = [
 	{
 		accessor: "EPS_Growth",
 		header: "EPS Growth",
+		show:false
 	},
 	{
 		accessor: "Sales_Growth",
 		header: "Sales Growth",
+		show:false
 	},
 	{
 		accessor: "P_E",
 		header: "Price to Earnings",
+		show:false
 	},
 	{
 		accessor: "PEG",
 		header: "price/earnings to growth ",
+		show:false
 	},
 	{
 		accessor: "P_S",
 		header: "Price to Sales",
+		show:false
 	},
 	{
 		accessor: "P_B",
@@ -81,6 +87,7 @@ export const COLUMNS = [
 	{
 		accessor: "P_FCF",
 		header: "Price to Free Cash Flow",
+		show:false
 	},
 	{
 		accessor: "Cash_Per_Share",
@@ -89,47 +96,58 @@ export const COLUMNS = [
 	{
 		accessor: "Receivebles",
 		header: "Receivebles",
+		show:false
 	},
 	{
 		accessor: "FiveYrEPSGrowth",
 		header: "5 year EPS Growth Rate",
+		show:false
 	},
 	{
 		accessor: "ThreeYrEPSGrowth",
 		header: "3 year EPS Growth Rate",
+		show:false
 	},
 	{
 		accessor: "FiveYrNetIncomeGrowth",
 		header: "5 Year Net Income Growth Rate",
+		show:false
 	},
 
 	{
 		accessor: "ThreeYrNetIncomeGrowth",
 		header: "3 Year Net Income Growth Rate",
+		show:false
 	},
 	{
 		accessor: "ThreeYrDebtGrowth",
 		header: "3 Year Debt Growth Rate",
+		show:false
 	},
 	{
 		accessor: "ThreeYrReceiveblesGrowth",
 		header: "3 Year Receivebles Growth Rate",
+		show:false
 	},
 	{
 		accessor: "P_C",
 		header: "Price to Cash",
+		show:false
 	},
 	{
 		accessor: "EPS",
 		header: "EPS",
+		show:false
 	},
 	{
 		accessor: "Dividend",
 		header: "Dividend",
+		show:false
 	},
 	{
 		accessor: "ROI",
 		header: "Return On Investment",
+		show:false
 	},
 	{
 		accessor: "Volume",
@@ -138,9 +156,11 @@ export const COLUMNS = [
 	{
 		accessor: "EarningDate",
 		header: "Earnings Date",
+		show:false
 	},
 	{
 		accessor: "InsideOwnerShip",
 		header: "InsideOwnerShip",
+		show:false
 	},
 ];
