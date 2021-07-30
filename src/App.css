@@ -5,6 +5,10 @@
   padding: 1rem;
 }
 
+.article-list {
+  color: #313437;
+  background-color: #fff;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

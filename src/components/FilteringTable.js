@@ -12,7 +12,7 @@ import MOCK_DATA_SCREENER from "./MOCK_DATA_SCREENER.json";
 import { COLUMNS } from "./columns";
 import "./Table.css";
 import { CheckBox } from "./CheckBox";
-
+import { Dropdown, ButtonGroup, Button } from "react-bootstrap";
 export const FilteringTable = (props) => {
 	const columns = COLUMNS; // use MEMO ??????
 	const data = props.data; // use MEMO ??????
@@ -134,7 +134,7 @@ export const FilteringTable = (props) => {
 	}
 	const columnSelectDivStyle = {
 		float: 'left',
-		padding: "0px",
+		padding: "1rem",
 		backgroundColor: 'white',
 		display: 'flex'
 	}
@@ -167,13 +167,8 @@ export const FilteringTable = (props) => {
 
 	}
 	return (
-
+		<>
 		
-		<div style = {masterDiv}>
-			<div style = {{display: 'flex'}}>
-			<label className = "lblPresets">Presets</label>
-
-			</div>
 			<div>
 			<div className = "divPresets"> 
 				{/*<div style = {columnSelectDivStyle}>
@@ -184,25 +179,27 @@ export const FilteringTable = (props) => {
 			
 				
 				<div style = {columnSelectDivStyle}>
-
-					<button className = "btnPresets"  onClick = {
+					<ButtonGroup>
+					<Button  onClick = {
 						(e) => showOverview()
-					} >Overview</button>
-					<button  className = "btnPresets"  onClick = {
+					} >Overview</Button>
+					<Button    onClick = {
 						(e) => showGrowth()
-					} >Growth</button>
-					<button className = "btnPresets"   onClick = {
+					} >Growth</Button>
+					<Button    onClick = {
 						(e) => showRatios()
-					} >Ratios</button>
-					<button className = "btnPresets"   onClick = {
+					} >Ratios</Button>
+					<Button className = "btnPresets"   onClick = {
 						(e) => showFundamental()
-					} >Fundamental</button>
-					<button  className = "btnPresets"   onClick = {
+					} >Fundamental</Button>
+					<Button  className = "btnPresets"   onClick = {
 						(e) => showOwnership()
-					} >Ownership</button>
-					<button className = "btnPresets"  onClick = {
+					} >Ownership</Button>
+					<Button className = "btnPresets"  onClick = {
 						(e) => showQuickFinancials()
-					} >Quick Financials</button>
+					} >Quick Financials</Button>
+					</ButtonGroup>
+					
 				</div>
 				
 				
@@ -270,7 +267,8 @@ export const FilteringTable = (props) => {
 			{hideShowColumns()}</div>
 			</div>
 			
-		</div>
+		
+		</>
 	);
 };
 
