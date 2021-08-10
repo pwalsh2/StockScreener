@@ -1,51 +1,73 @@
 table {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  float: left;
-  width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	align-self: center;
+	width: 100%;
+	border: 1px solid black;
 }
 
 table td,
 table th {
-  border-top: 1px solid #ddd;
-  padding: 8px;
-  background-color: "#f2f2f2";
+	border-top: 1px solid #ddd;
+	padding: 8px;
+	background-color: "#f2f2f2";
 }
 
 table tr:nth-child(even) {
-  background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 
 table tr:nth-child(odd) {
-  color: black;
+	color: black;
 }
 table th:hover {
-  background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 
 table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: center;
-  border-bottom: 1px solid black;
+	white-space: nowrap;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	border-bottom: 1px solid black;
 }
 
 .btnPresets {
-  font-size: 20px;
-  position: relative;
-  border: none;
-  border-radius: 0.25rem;
-  background-color: white;
+	font-size: 20px;
+	position: relative;
+	border: none;
+	border-radius: 0.25rem;
+	background-color: white;
 }
 
 .divPresets {
-  background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 
 .lblPresets {
-  font-size: 20px;
-  position: relative;
-  border: none;
-  border-radius: 0.25rem;
-  background-color: white;
+	font-size: 20px;
+	position: relative;
+	border: none;
+	border-radius: 0.25rem;
+	background-color: white;
+}
+
+.FltersTD {
+	width: 30px;
+}
+
+.columnSelectDivStyle {
+	padding: 1rem;
+	background-color: #f2f2f2;
+}
+
+.hideColumnsDiv {
+	width: 200px;
+	height: 300px;
+	overflow: scroll;
+	position: absolute;
+	border: 10px;
+	background-color: white;
+	opacity: 10;
+	z-index: 90;
 }
