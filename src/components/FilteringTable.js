@@ -358,7 +358,7 @@ export const FilteringTable = (props) => {
 					</div>
 				</div>
 				<div>
-					<Table id='Master-Table' style={{}} {...getTableProps}>
+					<Table id='Master-Table' {...getTableProps}>
 						<thead>
 							{headerGroups.map((headerGroup) => (
 								<tr {...headerGroup.getHeaderGroupProps()}>

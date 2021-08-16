@@ -10,7 +10,7 @@ export const COLUMNS = [
 		header: "Symbol",
 		style: { whiteSpace: "nowrap" },
 		Filter: ColumnFilter,
-
+		filter: "Text",
 		show: true,
 	},
 	{
@@ -18,12 +18,14 @@ export const COLUMNS = [
 		header: "Company Name",
 		show: true,
 		Filter: ColumnFilter,
+		filter: "Text",
 	},
 	{
 		accessor: "Exchange",
 		header: "Exchange",
 		show: false,
 		Filter: ColumnFilter,
+		filter: "Text",
 	},
 	{
 		accessor: "Market_Cap",
@@ -34,6 +36,8 @@ export const COLUMNS = [
 		accessor: "Sector",
 		header: "Sector",
 		show: false,
+		Filter: ColumnFilter,
+		filter: "Text",
 	},
 	{
 		accessor: "Current_Price",
