@@ -12,6 +12,8 @@ export const COLUMNS = [
 		Filter: ColumnFilter,
 		filter: "Text",
 		show: true,
+
+		
 	},
 	{
 		accessor: "companyName",

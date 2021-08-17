@@ -21,7 +21,7 @@ export const NumberRangeColumnFilter = ({
 			<input
 				value={filterValue[0] || ""}
 				onChange={(e) => {
-					console.log(preFilteredRows);
+					
 					const val = e.target.value;
 					setFilter((old = []) => [
 						val ? parseInt(val, 10) : undefined,

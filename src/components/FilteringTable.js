@@ -16,7 +16,7 @@ import { NumberRangeColumnFilter } from "./NumberRangeColumnFilter";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 export const FilteringTable = (props) => {
 	const columns = COLUMNS; // use MEMO ??????
-	const data = props.data; // use MEMO ??????
+	const [data, setData] = useState(props.data); // use MEMO ??????
 
 	const defaultColumn = useMemo(
 		() => ({
@@ -43,6 +43,7 @@ export const FilteringTable = (props) => {
 		allColumns,
 		getToggleHideAllColumnsProps,
 		setHiddenColumns,
+		setPageSize,
 	} = useTable(
 		{
 			columns,
@@ -76,7 +77,7 @@ export const FilteringTable = (props) => {
 		}
 	);
 
-	const { pageIndex } = state;
+	const { pageIndex, pageSize } = state;
 	const [hideColumns, setHideColumns] = useState(false);
 
 	const hideShowColumns = () => {
@@ -313,6 +314,17 @@ export const FilteringTable = (props) => {
 		setHiddenColumns(headerList);
 	};
 
+
+	const deleteRows = (selectedFlatRows) => {
+		console.log(selectedFlatRows.map((row) => row.id))
+		const IDlist =  selectedFlatRows.map((row) => row.id)
+		const DataCopy = [...data]
+
+		DataCopy.splice(IDlist[0], IDlist.length)
+		setData(DataCopy)
+		
+	}
+
 	return (
 		<>
 			<div>
@@ -338,13 +350,14 @@ export const FilteringTable = (props) => {
 								onClick={(e) => showQuickFinancials()}>
 								Quick Financials
 							</Button>
+							<Button  variant='outline-primary'>
+								Customize Personal Quick View
+							</Button>
 						</ButtonGroup>
 						<div style={{ float: "right" }}>
 							<ButtonGroup>
 								{hideShowColumns()}
 								<Button variant='outline-primary'>Trend View</Button>
-								<Button variant='outline-primary'>Industry Metrics</Button>
-								<Button variant='outline-primary'>Split Screen</Button>
 								<ReactHTMLTableToExcel
 									className='btn'
 									table='Master-Table'
@@ -421,6 +434,19 @@ export const FilteringTable = (props) => {
 							{" "}
 							Next
 						</button>
+						<select
+							value={pageSize}
+							onChange={e => {
+								setPageSize(Number(e.target.value))
+							}}
+							>
+							{[5, 10, 20, 30, 40, 50, 100, 1000, 100000, 160000].map(pageSize => (
+								<option key={pageSize} value={pageSize}>
+								Show {pageSize}
+								</option>
+							))}
+						</select> 
+						<Button onClick = {(e) => deleteRows(selectedFlatRows) }>Delete Rows</Button>
 					</div>
 				</div>
 			</div>
