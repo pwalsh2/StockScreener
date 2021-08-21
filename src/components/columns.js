@@ -1,5 +1,3 @@
-import { format } from "date-fns";
-import { NumberRangeColumnFilter } from "./NumberRangeColumnFilter";
 
 import { ColumnFilter } from "./ColumnFilter";
 
@@ -190,11 +188,6 @@ export const COLUMNS = [
 		show: false,
 	},
 	{
-		accessor: "InsideOwnerShip",
-		header: "InsideOwnerShip",
-		show: false,
-	},
-	{
 		accessor: "netIncome",
 		header: "Net Income",
 		show: false,
@@ -252,7 +245,7 @@ export const COLUMNS = [
 	{
 		accessor: "acquisitionsNet",
 		header: "Net Acquisitions",
-		show: false,
+	
 	},
 	{
 		accessor: "purchasesOfInvestments",
@@ -362,11 +355,6 @@ export const COLUMNS = [
 	{
 		accessor: "netIncomeGrowth",
 		header: "Net Income Growth",
-		show: false,
-	},
-	{
-		accessor: "epsgrowth",
-		header: "EPS Growth",
 		show: false,
 	},
 	{
@@ -791,11 +779,6 @@ export const COLUMNS = [
 		show: false,
 	},
 	{
-		accessor: "mktCap",
-		header: "Market Capitalization",
-		show: false,
-	},
-	{
 		accessor: "lastDiv",
 		header: "Last Dividend",
 		show: false,
@@ -805,23 +788,6 @@ export const COLUMNS = [
 		header: "Range",
 		show: false,
 	},
-	{
-		accessor: "changes",
-		header: "Change",
-		show: false,
-	},
-
-	{
-		accessor: "currency",
-		header: "Currency",
-		show: false,
-	},
-	{
-		accessor: "cik",
-		header: "",
-		show: false,
-	},
-
 	{
 		accessor: "ceo",
 		header: "CEO Of Company",
@@ -1255,7 +1221,7 @@ export const COLUMNS = [
 	},
 	{
 		accessor: "totalStockholdersEquity",
-		header: "Total Stockholders Equity",
+	header: "Total Stockholders Equity",
 		show: false,
 	},
 	{
