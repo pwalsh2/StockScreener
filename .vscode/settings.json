@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.resolveGlobalModules": true,
+    "editor.formatOnType": true,
+    "prettier.withNodeModules": true
+}

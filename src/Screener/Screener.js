@@ -1,23 +1,30 @@
-import MOCK_DATA_SCREENER from "../components/MOCK_DATA_SCREENER.json";
-import { FilteringTable } from "../components/FilteringTable";
-import { useState } from "react";
-
+import MOCK_DATA_SCREENER from "../Screenercomponents/MOCK_DATA_SCREENER.json";
+import { FilteringTable } from "../Screenercomponents/FilteringTable";
+import { useState,useEffect } from "react";
+import { FetchAll } from '../Rest/fetch_Screen'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, ButtonGroup, Button, Overlay, Table } from "react-bootstrap";
 export const Screener = () => {
-	const [data, setData] = useState([MOCK_DATA_SCREENER]);
+
+
+	const [data, setData] = useState([[]]);
 	const [two, setTwo] = useState(false)
 	const addScreener = () => {
 		
-		setTwo(true)
+		setTwo(!two)
 	}
 
 
+	
 
 	
 	return (
-		<>
+		<>   
+		{
+			two ? <Button onClick = {(e) => addScreener()}>Remove Screen</Button> 
+			: 
 			<Button onClick = {(e) => addScreener()}>Add Screener</Button>	
+		}
 			<div>
 
 				

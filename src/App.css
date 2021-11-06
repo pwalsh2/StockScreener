@@ -43,3 +43,22 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "screener ." ". .";
+}
+
+.Screener {
+  grid-area: screener;
+  overflow-x: scroll;
+}
+
+.Chart {
+  grid-area: chart;
+  
+}

@@ -1,3 +1,11 @@
+
+.table-container {
+	
+	overflow: auto;
+	
+  }
+  
+
 table {
 	font-family: Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
@@ -5,9 +13,15 @@ table {
 	width: 100%;
 	border: 1px solid black;
 }
+tbody {
 
+	height: 100px; 
+	overflow-y: auto;    
+}
 table td,
 table th {
+	position: sticky;
+	top: 0;
 	border-top: 1px solid #ddd;
 	padding: 8px;
 	background-color: "#f2f2f2";
@@ -15,10 +29,12 @@ table th {
 
 table tr:nth-child(even) {
 	background-color: #f2f2f2;
+	text-align: center;
 }
 
 table tr:nth-child(odd) {
 	color: black;
+	text-align: center;
 }
 table th:hover {
 	background-color: #f2f2f2;
@@ -70,4 +86,13 @@ table th {
 	background-color: white;
 	opacity: 10;
 	z-index: 90;
+}
+
+
+.saveScreenModalDiv{
+
+	
+	justify-content: center;
+	align-items: center;
+
 }
