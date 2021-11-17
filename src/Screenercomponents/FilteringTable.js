@@ -88,7 +88,7 @@ export const FilteringTable = (props) => {
 					{
 						id: "selection",
 						header: ({ getToggleAllRowsSelectedProps }) => (
-							<CheckBox {...getToggleAllRowsSelectedProps()} />
+							<div></div>
 						),
 						Cell: ({ row }) => (
 							<CheckBox {...row.getToggleRowSelectedProps()} />
@@ -486,7 +486,48 @@ export const FilteringTable = (props) => {
 					</div>
 				</div>
 				<div>
+					<div>
+
+					</div>
+				<div {...getTableProps}>
+					{headerGroups.map((headerGroup) => ( 
+								<div   className = "gallery" {...headerGroup.getHeaderGroupProps()}> 
+									{headerGroup.headers.map((column, index) => (
+										
+										<>
+										{(() => {
+											if (index%6 === 0) {
+											  return
+											} else {
+											  return <div {...column.getHeaderProps()} > {column.render("header")}
+											  <span style={{textAlign: "center"}}>
+											  {column.canFilter ? column.render("Filter") : null}
+												  {column.isSorted
+													  ? column.isSortedDesc
+														  ? "🔽"
+														  : "🔼"
+													  : ""}
+											  </span> </div>;
+									  
+											}
+										  })()}
+											
+											
+										  	</>
+											
+										
+									))}
+								</div>
+							))}
+					</div>
+				</div>
+					
+				
+						
+				<div>
 					<Table id='Master-Table' {...getTableProps}>
+						
+					
 						<thead> 
 							{headerGroups.map((headerGroup) => ( 
 								<tr {...headerGroup.getHeaderGroupProps()}> 
@@ -494,7 +535,7 @@ export const FilteringTable = (props) => {
 										<th
 											{...column.getHeaderProps(column.getSortByToggleProps())}>
 											{column.render("header")}
-											<span>
+											{/* <span>
 											{column.canFilter ? column.render("Filter") : null}
 												{column.isSorted
 													? column.isSortedDesc
@@ -502,7 +543,7 @@ export const FilteringTable = (props) => {
 														: "🔼"
 													: ""}
 											</span>
-									
+									 */}
 
 											
 										</th>

@@ -96,3 +96,10 @@ table th {
 	align-items: center;
 
 }
+ 
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 0.5fr);
+    grid-template-rows: repeat(4, 4vw);
+    grid-gap: 4px;
+}
